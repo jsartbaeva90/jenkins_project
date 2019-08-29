@@ -2,7 +2,6 @@ node{
     stage("Update jenkins"){
         properties([parameters([string(defaultValue: '63.35.235.236', description: 'please provide IP', name: 'ENVIR', trim: true)])])
         sh "echo Parameter added"
-
     }
     stage("Install git"){
         sh "ssh ec2-user@${ENVIR} sudo yum install git  python-pip -y"
